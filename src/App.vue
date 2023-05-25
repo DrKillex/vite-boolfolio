@@ -1,6 +1,7 @@
 <script>
 import axios from 'axios';
-import AppHeader from './components/AppHeader.vue'
+import { store } from './store';
+import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
 import AppFooter from './components/AppFooter.vue';
 
@@ -12,7 +13,7 @@ export default{
       apiUrls: {
         records: '/records'
       },
-      records: []
+      store
     }
   },
   components: {
@@ -24,7 +25,7 @@ export default{
     getRecords() {
       axios.get(this.apiBaseUrl + this.apiUrls.records)
       .then((response) => {
-        this.records = response.data.results;
+        this.store.records = response.data.results;
         console.log(this.records)
       })
       .catch((error) => {
