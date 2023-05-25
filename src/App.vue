@@ -26,7 +26,7 @@ export default{
       axios.get(this.apiBaseUrl + this.apiUrls.records)
       .then((response) => {
         this.store.records = response.data.results;
-        console.log(this.records)
+        console.log(this.store.records)
       })
       .catch((error) => {
         console.log(error);
