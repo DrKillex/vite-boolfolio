@@ -10,7 +10,9 @@
                     <li v-for="technology in record.technologies">{{ technology.name }}</li>
                 </ul>
             </div>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <router-link :to="{ name: 'project', params: { slug: record.slug } }" class="btn btn-primary">
+                vai ai dettagli
+            </router-link>
         </div>
     </div>
 </template>

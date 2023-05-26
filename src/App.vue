@@ -2,7 +2,6 @@
 import axios from 'axios';
 import { store } from './store';
 import AppHeader from './components/AppHeader.vue';
-import AppMain from './components/AppMain.vue';
 import AppFooter from './components/AppFooter.vue';
 
 export default{
@@ -18,30 +17,14 @@ export default{
   },
   components: {
     AppHeader,
-    AppMain,
     AppFooter
-  },
-  methods: {
-    getRecords() {
-      axios.get(this.apiBaseUrl + this.apiUrls.records)
-      .then((response) => {
-        this.store.records = response.data.results;
-        console.log(this.store.records)
-      })
-      .catch((error) => {
-        console.log(error);
-      })
-    }
-  },
-  created() {
-    this.getRecords();
   }
 }
 </script>
 
 <template>
   <AppHeader />
-  <AppMain />
+  <router-view></router-view>
   <AppFooter />
 </template>
 
