@@ -23,6 +23,9 @@
                         <li>
                             <TypesList />
                         </li>
+                        <li>
+                            <TechnologiesList />
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -31,11 +34,13 @@
 </template>
  
 <script>
+import TechnologiesList from './TechnologiesList.vue';
 import TypesList from './TypesList.vue';
 export default {
     name: 'AppHeader',
     components: {
-        TypesList
+        TypesList,
+        TechnologiesList
     }
 }
 </script>

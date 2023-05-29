@@ -6,15 +6,15 @@ export default {
     data() {
         return {
             store,
-            currentType: '',
+            currentTechnology: '',
         }
     },
     methods: {
-        getTypes() {
-            axios.get(this.store.apiBaseUrl+this.store.apiUrls.types)
+        getTechnologies() {
+            axios.get(this.store.apiBaseUrl+this.store.apiUrls.technologies)
                 .then((response) => {
                     console.log(response);
-                    this.store.types = response.data.results;
+                    this.store.technologies = response.data.results;
 
                 })
                 .catch((error) => {
@@ -23,16 +23,16 @@ export default {
         },
         changePage(){
             //console.log(this.currentCategory);
-            this.$router.push({name: 'type', params:{slug: this.currentType}});
+            this.$router.push({name: 'technology', params:{slug: this.currentTechnology}});
         }
     },
     created(){
-        this.getTypes();
+        this.getTechnologies();
     }
 }
 </script>
 <template>
-    <select class="form-select" v-if="store.types.length > 0" @change="changePage" v-model="currentType">
-        <option :value="item.slug" v-for="item in store.types">{{ item.name }}</option>
+    <select class="form-select" v-if="store.types.length > 0" @change="changePage" v-model="currentTechnology">
+        <option :value="item.slug" v-for="item in store.technologies">{{ item.name }}</option>
     </select>
 </template>
