@@ -20,6 +20,9 @@
                                 projects
                             </router-link>
                         </li>
+                        <li>
+                            <TypesList />
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -28,8 +31,12 @@
 </template>
  
 <script>
+import TypesList from './TypesList.vue';
 export default {
-    name: 'AppHeader'
+    name: 'AppHeader',
+    components: {
+        TypesList
+    }
 }
 </script>
  

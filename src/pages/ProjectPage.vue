@@ -13,12 +13,15 @@ export default {
     methods: {
         getRecord() {
             console.log(this.$route.params.slug);
-            axios.get(this.store.apiBaseUrl + this.store.apiUrls.show + "/" + this.$route.params.slug)
+            axios.get(this.store.apiBaseUrl + this.store.apiUrls.records + "/" + this.$route.params.slug)
                 .then((response) => {                   
                     this.store.record = response.data.results;
                 })
                 .catch((error) => {
                     console.log(error);
+                    if (error.response.status === 404) {
+                        this.$router.push({ name: 'not-found' });
+                    }
                     this.store.isError = true;
                     this.store.errorMessage = error.message;
                 })
