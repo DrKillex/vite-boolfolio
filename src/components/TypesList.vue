@@ -22,7 +22,6 @@ export default {
                 })
         },
         changePage(){
-            //console.log(this.currentCategory);
             this.$router.push({name: 'type', params:{slug: this.currentType}});
         }
     },

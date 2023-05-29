@@ -7,7 +7,7 @@ export default {
         return {
             store,
             isError: false,
-            errorMessage: null
+            errorMessage: null,
         }
     },
     methods: {
@@ -25,6 +25,9 @@ export default {
                     this.store.isError = true;
                     this.store.errorMessage = error.message;
                 })
+        },
+        goTo(where, who){
+            this.$router.push({name: where, params:{slug: who}});
         }
     },
     created() {
@@ -40,11 +43,11 @@ export default {
         <div class="container">
             <h1 class="mt-5 mb-3">{{ store.record.title }}</h1>
             <p>creation date: {{ store.record.creation_date }}</p>
-            <p v-if="store.record.type">type: {{ store.record.type.name }}</p>
-            <div v-if="store.record.technologies.length > 0">
+            <p v-if="store.record.type" role="button" @click="goTo('type', store.record.type.slug)">type: <span class="badge bg-primary ms-4">{{ store.record.type.name }}</span></p>
+            <div v-if="store.record.technologies.length > 0" class="d-flex">
                 <span>technologies: </span>
                 <ul>
-                    <li v-for="technology in store.record.technologies">{{ technology.name }}</li>
+                    <li class="badge bg-success me-2" role="button" v-for="technology in store.record.technologies"  @click="goTo('technology', technology.slug)">{{ technology.name }}</li>
                 </ul>
             </div>
             <p v-if="store.record.record_description" class="card-text">description: {{ store.record.record_description }}</p>
