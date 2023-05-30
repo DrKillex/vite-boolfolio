@@ -16,6 +16,11 @@
                             </router-link>
                         </li>
                         <li>
+                            <router-link :to="{ name: 'lead' }" class="nav-link">
+                                contact
+                            </router-link>
+                        </li>
+                        <li>
                             <router-link :to="{ name: 'projects' }" class="nav-link">
                                 projects
                             </router-link>

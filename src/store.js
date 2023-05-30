@@ -5,7 +5,8 @@ export const store = reactive({
   apiUrls: {
     records: '/records',
     types: '/types',
-    technologies: '/technologies'
+    technologies: '/technologies',
+    leads: '/leads'
   },
   records: [],
   types: [],
