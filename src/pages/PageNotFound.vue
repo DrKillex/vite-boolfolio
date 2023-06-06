@@ -1,3 +1,4 @@
+<!-- pagina di errore -->
 <script>
 export default {
     name: "PageNotFound"

@@ -11,6 +11,7 @@ export default {
         }
     },
     methods: {
+        // chiamata a api per progetto singolo con parametro slug e relativi types e technologies
         getRecord() {
             console.log(this.$route.params.slug);
             axios.get(this.store.apiBaseUrl + this.store.apiUrls.records + "/" + this.$route.params.slug)
@@ -26,6 +27,7 @@ export default {
                     this.store.errorMessage = error.message;
                 })
         },
+        // funzione di reindirizzamento tramite router per technologies e types
         goTo(where, who){
             this.$router.push({name: where, params:{slug: who}});
         }

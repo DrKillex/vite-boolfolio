@@ -1,8 +1,10 @@
+<!-- componente header -->
 <template>
     <header class="py-4">
         <div class="container">
             <div class="d-flex justify-content-between">
                 <div class="logo">Blog</div>
+                <!-- barra di navigazione -->
                 <nav>
                     <ul class="list-unstyled m-0 p-0 gap-2 d-flex">
                         <li>
@@ -25,14 +27,19 @@
                                 projects
                             </router-link>
                         </li>
+                        <!-- select dei type -->
                         <li>
                             <TypesList />
                         </li>
+                        <!-- /select dei type -->
+                        <!-- select delle technologies -->
                         <li>
                             <TechnologiesList />
                         </li>
+                        <!-- /select delle technologies -->
                     </ul>
                 </nav>
+                <!-- /barra di navigazione -->
             </div>
         </div>
     </header>

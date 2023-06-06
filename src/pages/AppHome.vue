@@ -1,3 +1,4 @@
+<!-- pagina home -->
 <script>
 export default {
     name: "AppHome"

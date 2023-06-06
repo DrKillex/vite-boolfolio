@@ -13,6 +13,7 @@ export default {
         }
     },
     methods: {
+        // chiamata api per specifica technology e relativi progetti
         getTechnology() {
             axios.get(this.store.apiBaseUrl+this.store.apiUrls.technologies+'/'+this.$route.params.slug)
                 .then((response) => {
@@ -27,6 +28,7 @@ export default {
     },
     created() {
         this.getTechnology();
+        // monitora il metodo getTechnology per aggiornare la view di conseguenza
         this.$watch(() => this.$route.params,() => {
                 this.getTechnology();
             }

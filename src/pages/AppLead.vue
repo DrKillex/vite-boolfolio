@@ -1,3 +1,4 @@
+<!-- pagina lead -->
 <script>
 import axios from 'axios';
 import {store} from '../store';
@@ -16,6 +17,7 @@ export default {
         }
     },
     methods: {
+        // chiamata per invio di dati (messaggio di contatto) a backend 
         sendLead() {
             this.status=false
             const data = {
@@ -27,14 +29,13 @@ export default {
             axios.post(this.store.apiBaseUrl+this.store.apiUrls.leads, data)
                 .then((response) => {
                     if(response.status === 201){
+                        // variabile di stato per visualizzazione messaggio conferma
                         this.status=true
                     } 
                 })
                 .catch((error) => {
                     console.log(error)
                 });
-
-
         },
     },
 }
@@ -46,6 +47,7 @@ export default {
         <div class="container">
             <h1>contact us</h1>
             <p v-if="status">messaggio inviato con successo</p>
+            <!-- form di invio dati -->
             <form @submit.prevent="sendLead">
                 <div class="mb-3">
                     <label for="author" class="form-label">Autore</label>
@@ -57,6 +59,7 @@ export default {
                 </div>
                 <button class="btn btn-primary">send</button>
             </form>
+            <!-- /form di invio dati -->
         </div>
     </section>
 </template>

@@ -10,6 +10,7 @@ export default {
         }
     },
     methods: {
+        // chiamata api per types e relativi progetti
         getTypes() {
             axios.get(this.store.apiBaseUrl+this.store.apiUrls.types)
                 .then((response) => {
@@ -21,6 +22,7 @@ export default {
                     console.log(error);
                 })
         },
+        // cambio di pagina visualizzata tramite router
         changePage(){
             this.$router.push({name: 'type', params:{slug: this.currentType}});
         }

@@ -1,10 +1,12 @@
-# Vue Template
+# Portfolio
 
-Template di partenza per progetti Vue con option API
+portfolio per visualizzazione di progetti passati con relativo status data di creazione e altre specifiche
 
-Per installare il progetto
-- npm install
-- npm run dev
+## roadmap
+
+- grafica
+- aggiunta link reindirizzamento pagina github del progetto
+
 
 
 

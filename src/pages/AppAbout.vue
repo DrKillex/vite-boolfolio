@@ -1,3 +1,4 @@
+<!-- pagina about -->
 <script>
 export default {
     name: "AppAbout"

@@ -16,6 +16,7 @@ export default {
         ProjectCard,
     },
     methods: {
+        // chiamata a api per tutti i progetti e relativi types e technologies
         getRecords() {
             axios.get(this.store.apiBaseUrl + this.store.apiUrls.records, {
                 params: {
@@ -35,6 +36,7 @@ export default {
                     console.log(error);
                 })
         },
+        // funzione "load more"
         nextPage() {
             this.currentPage += 1;
             this.getRecords();

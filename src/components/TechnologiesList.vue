@@ -10,17 +10,17 @@ export default {
         }
     },
     methods: {
+        // chiamata api per technologies e relativi progetti
         getTechnologies() {
             axios.get(this.store.apiBaseUrl+this.store.apiUrls.technologies)
                 .then((response) => {
-                    console.log(response);
                     this.store.technologies = response.data.results;
-
                 })
                 .catch((error) => {
                     console.log(error);
                 })
         },
+        // cambio di pagina visualizzata tramite router
         changePage(){
             this.$router.push({name: 'technology', params:{slug: this.currentTechnology}});
         }

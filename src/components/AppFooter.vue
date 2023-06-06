@@ -1,3 +1,4 @@
+<!-- componente footer -->
 <template>
     <footer>
         <div>Footer</div>
